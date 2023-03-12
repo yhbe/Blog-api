@@ -1,4 +1,4 @@
-const Blog = require("../controller/ctrlBlog")
+const Blog = require("../models/modleBlog")
 
 module.exports = {
   post: async(req,res) => {
@@ -9,14 +9,20 @@ module.exports = {
         body: req.body.body,
         date: req.body.date
       });
-      const savedPost = newPost.save()
+      await newPost.save()
       return res.status(201).json({message: "Post created"})
     } catch (error){
       return res.status(404).json({message: error.message})
     }
     
   },
-  // get: {
-
-  // },
+  get: async(req,res) => {
+    try {
+      const blogs = await Blog.find()
+      res.json(blogs)
+    } catch(error){
+      console.log(error)
+      res.status(500).json({message: "Error getting messages"})
+    }
+  },
 }

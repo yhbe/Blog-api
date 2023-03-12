@@ -7,6 +7,9 @@ require("dotenv").config()
 
 connect()
 
+//handle incoming JSON data
+app.use(express.json())
+
 const blogRoute = require("./routes/blog")
 app.use("/blogs", blogRoute)
 

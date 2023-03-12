@@ -3,6 +3,6 @@ const controller = require("../controller/ctrlBlog")
 const router = express.Router()
 
 router.post("/", controller.post)
-// router.get("/", controller.get)
+router.get("/", controller.get)
 
 module.exports = router

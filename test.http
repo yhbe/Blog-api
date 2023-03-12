@@ -1,0 +1,11 @@
+# GET http://localhost:5000/blogs
+
+POST http://localhost:5000/blogs
+Content-Type: application/json
+
+{
+  "author": "New Author",
+  "title": "New Title",
+  "date": "New Date",
+  "body": "New Body"
+}
