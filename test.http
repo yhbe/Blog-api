@@ -4,8 +4,15 @@ POST http://localhost:5000/blogs
 Content-Type: application/json
 
 {
-  "author": "New Author",
-  "title": "New Title",
-  "date": "New Date",
-  "body": "New Body"
+  "author": "John Doe",
+  "title": "My first blog",
+  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "date": "2023-03-13",
+  "comments": [{
+    "text": "Nice blog!",
+    "author": "Jane Doe"
+  }, {
+    "text": "Great post!",
+    "author": "Bob Smith"
+  }]
 }
