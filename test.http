@@ -1,18 +1,26 @@
 # GET http://localhost:5000/blogs
 
-POST http://localhost:5000/blogs
+# POST http://localhost:5000/blogs
+# Content-Type: application/json
+
+# {
+#   "author": "John Doe",
+#   "title": "My first blog",
+#   "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+#   "date": "2023-03-13",
+#   "comments": [{
+#     "text": "Nice blog!",
+#     "author": "Jane Doe"
+#   }, {
+#     "text": "Great post!",
+#     "author": "Bob Smith"
+#   }]
+# }
+
+POST http://localhost:5000/blogs/640e69a69036a607cf626f1a
 Content-Type: application/json
 
 {
-  "author": "John Doe",
-  "title": "My first blog",
-  "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "date": "2023-03-13",
-  "comments": [{
-    "text": "Nice blog!",
-    "author": "Jane Doe"
-  }, {
-    "text": "Great post!",
-    "author": "Bob Smith"
-  }]
+  "author": "Anonymous",
+  "text": "Great Blog Post"
 }

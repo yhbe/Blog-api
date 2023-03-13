@@ -4,5 +4,6 @@ const router = express.Router()
 
 router.post("/", controller.post)
 router.get("/", controller.get)
+router.post("/:id", controller.addAComment)
 
 module.exports = router
