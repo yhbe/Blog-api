@@ -44,5 +44,28 @@ module.exports = {
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
-}
+},
+  put: async (req,res) => {
+    const {id} = req.params
+    const {author, body, title, comments} = req.body
+
+    try{
+      const blog = await Blog.findById(id)
+
+        if (!blog) {
+      return res.status(404).json({ message: "Blog post not found" })
+    }
+
+      blog.author = author
+      blog.title = title
+      blog.body = body
+      blog.comments = comments || []
+
+      await blog.save()
+
+      return res.status(200).json({blog})
+    } catch (error){
+      return res.status(500).json({message: error.message})
+    }
+  }
 }

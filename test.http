@@ -17,10 +17,20 @@
 #   }]
 # }
 
-POST http://localhost:5000/blogs/640e69a69036a607cf626f1a
+# POST http://localhost:5000/blogs/640e69a69036a607cf626f1a
+# Content-Type: application/json
+
+# {
+#   "author": "Anonymous",
+#   "text": "Great Blog Post"
+# }
+
+PUT http://localhost:5000/blogs/640fb7caa89700bb78e7e3e0
 Content-Type: application/json
 
 {
   "author": "Anonymous",
-  "text": "Great Blog Post"
+  "title": "title",
+  "body": "body",
+  "comments": []
 }
